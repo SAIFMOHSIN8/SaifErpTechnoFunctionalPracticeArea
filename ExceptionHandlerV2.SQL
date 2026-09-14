@@ -1,0 +1,17 @@
+SET SERVEROUTPUT ON;
+
+DECLARE
+    u_sal NUMBER;
+BEGIN
+    SELECT sal
+    INTO u_sal
+    FROM emp
+    WHERE empno = &en;
+
+    DBMS_OUTPUT.PUT_LINE('SAL = ' || u_sal);
+
+EXCEPTION
+    WHEN NO_DATA_FOUND THEN
+        DBMS_OUTPUT.PUT_LINE('INPUT A VALID EMPNO');
+END;
+/
