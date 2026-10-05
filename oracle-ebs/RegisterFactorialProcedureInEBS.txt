@@ -1,0 +1,50 @@
+register the factorial procedure in oracle ebs
+
+database object
+
+procedure name: SAIF_PR_FACTORIAL
+procedure purpose: calculate the factorial of a supplied whole number
+
+registration steps
+
+1. confirmed that the SAIF_PR_FACTORIAL procedure existed in the oracle database with a valid status.
+
+2. opened the application developer responsibility.
+
+3. registered SAIF_PR_FACTORIAL as a concurrent program executable.
+
+   execution method: pl/sql stored procedure
+   execution file name: SAIF_PR_FACTORIAL
+   application: application object library
+
+4. opened the concurrent program definition screen.
+
+5. created and enabled the following concurrent program:
+
+   program: SAIF_PR_FACTORIAL
+   short name: SAIF_PR_FACTORIAL
+   executable: SAIF_PR_FACTORIAL
+   method: pl/sql stored procedure
+   output format: text
+   use in SRS: enabled
+
+number parameter
+
+6. opened the parameters window and added the factorial input:
+
+   sequence: 10
+   parameter: Number
+   enabled: yes
+   value set: 1 Number with No validation
+   prompt: Number
+   display size: 1
+
+7. left the token field blank because pl/sql stored procedure parameters are passed according to their registered sequence.
+
+8. saved the parameter and concurrent program definitions.
+
+result
+
+the SAIF_PR_FACTORIAL procedure was registered as an enabled ebs concurrent program with a numeric input parameter.
+
+this ticket confirms registration and parameter configuration only; successful concurrent execution was not recorded as part of the evidence.

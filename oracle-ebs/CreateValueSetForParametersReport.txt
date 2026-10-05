@@ -1,0 +1,56 @@
+create a value set and assign it to the parameters report
+
+value set created
+
+name: SAIF_VS_DNO
+purpose: provide valid department numbers for the DNO report parameter
+
+value set configuration
+
+1. opened the application developer responsibility.
+
+2. navigated to:
+
+   flexfield --> validation --> sets
+
+3. created the value set SAIF_VS_DNO.
+
+4. applied the following format settings:
+
+   list type: list of values
+   security type: no security
+   format type: number
+   maximum size: 4
+   precision: 0
+   numbers only: enabled
+   validation type: table
+
+5. configured the table validation to return valid department-number values.
+
+6. saved the value set definition.
+
+adding the value set to the report
+
+7. navigated to:
+
+   concurrent --> program
+
+8. queried the SAIF_PARAMETERS_REPORT concurrent program.
+
+9. opened the parameters window.
+
+10. configured the DNO parameter as follows:
+
+    sequence: 1
+    parameter: DNO
+    enabled: yes
+    value set: SAIF_VS_DNO
+    display size: 4
+    prompt: DNO
+    token: DNO
+
+11. saved the parameter and concurrent program configuration.
+
+result
+
+SAIF_VS_DNO was created as a table-validated numeric value set and assigned to the DNO parameter of SAIF_PARAMETERS_REPORT.

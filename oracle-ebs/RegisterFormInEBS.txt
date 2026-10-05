@@ -1,0 +1,40 @@
+register an oracle form in ebs
+
+form being registered
+
+internal form name: SAIF_MASTERDETAILFORM
+user form name: SAIF_MasterDetailForm
+application: application object library
+runtime file: SAIF_MasterDetailForm.fmx
+
+steps carried out
+
+1. confirmed that the compiled SAIF_MasterDetailForm.fmx file had been placed in the ebs forms/US directory.
+
+2. logged in to oracle e-business suite with the application developer responsibility.
+
+3. followed this navigation path:
+
+   application --> form
+
+4. created a new form registration record.
+
+5. entered the internal form name without the .fmx extension:
+
+   SAIF_MASTERDETAILFORM
+
+6. selected application object library as the application.
+
+7. entered the user-facing form name:
+
+   SAIF_MasterDetailForm
+
+8. saved the form definition using ctrl + s.
+
+9. queried the form registration again and confirmed that the saved record was returned.
+
+completion
+
+SAIF_MasterDetailForm was successfully registered in oracle ebs.
+
+this registration makes the form available for use in an ebs form function. Function and menu assignments are handled separately.
