@@ -1,0 +1,53 @@
+create a department lookup in oracle ebs
+
+lookup header
+
+lookup type: SAIF_DEPT_LOOKUP
+meaning: SAIF_DEPT_LOOKUP
+application: application object library
+description: DEPARTMENT LOOKUP TEST
+access level: extensible
+
+creation steps
+
+1. logged in with the application developer responsibility.
+
+2. opened the application object library lookups screen.
+
+3. created a new lookup type named SAIF_DEPT_LOOKUP.
+
+4. selected application object library as the owning application.
+
+5. selected extensible as the access level so additional department codes could be maintained.
+
+6. entered and enabled the following lookup codes:
+
+   code: FIN
+   meaning: FINANCE
+   description: FINANCE
+
+   code: IT
+   meaning: INFORMATION TECHNOLOGY
+   description: INFORMATION TECHNOLOGY
+
+   code: SALES
+   meaning: SALES
+   description: SALES
+
+   code: HR
+   meaning: HUMAN RESOURCE
+   description: HUMAN RESOURCE
+
+   code: MARKETING
+   meaning: MARKETING
+   description: MARKETING
+
+7. entered 21-SEP-2026 as the effective start date for each lookup code.
+
+8. confirmed that each department code was enabled and had no end date.
+
+9. saved the lookup definition and its values.
+
+result
+
+SAIF_DEPT_LOOKUP was created successfully with five active department lookup codes.

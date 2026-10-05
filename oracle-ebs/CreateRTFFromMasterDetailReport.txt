@@ -1,0 +1,46 @@
+create an .rtf template from a master-detail report
+
+source report
+
+report name: SAIF_MASTER_DETAIL_REPORT
+report structure: master-detail
+master data: department
+detail data: employees
+
+preparing the data
+
+1. opened SAIF_MASTER_DETAIL_REPORT in oracle reports builder.
+
+2. reviewed the report data model and confirmed that it contained the master and detail queries.
+
+3. confirmed that the department data was linked to its related employee records through DEPTNO.
+
+4. generated sample xml data from the master-detail report.
+
+building the rtf layout
+
+5. opened microsoft word with the oracle bi publisher template builder.
+
+6. loaded the master-detail sample xml file.
+
+7. created the department section of the report using the master-group fields.
+
+8. added the employee section inside the department group.
+
+9. configured the employee rows to repeat for every detail record belonging to the current department.
+
+10. inserted the required department and employee fields into the layout.
+
+11. formatted the headings, columns, spacing, and page layout.
+
+12. previewed the template using the sample xml data.
+
+13. verified that each department displayed its related employee records.
+
+14. saved the completed layout as an .rtf template for SAIF_MASTER_DETAIL_REPORT.
+
+result
+
+an .rtf report layout was created from the SAIF_MASTER_DETAIL_REPORT master-detail data structure.
+
+the report displays department information as the master data and the related employee records as the detail data.

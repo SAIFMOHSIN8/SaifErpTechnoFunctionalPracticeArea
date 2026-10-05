@@ -1,0 +1,62 @@
+create one independent value set and two dependent value sets
+
+value sets created
+
+independent value set:
+SAIF_DEPARTMENT_IVS
+
+dependent value sets:
+SAIF_JOB_DVS
+SAIF_LOCATION_DVS
+
+independent value set setup
+
+1. opened the application developer responsibility.
+
+2. navigated to:
+
+   flexfield --> validation --> sets
+
+3. created SAIF_DEPARTMENT_IVS with the following configuration:
+
+   list type: list of values
+   security type: no security
+   format type: char
+   maximum size: 30
+   validation type: independent
+
+4. saved the independent value set.
+
+dependent value-set setup
+
+5. created SAIF_JOB_DVS.
+
+6. selected dependent as its validation type and connected it to SAIF_DEPARTMENT_IVS.
+
+   format type: char
+   maximum size: 30
+   list type: list of values
+
+7. created SAIF_LOCATION_DVS using the same format settings.
+
+8. selected dependent as its validation type and connected it to SAIF_DEPARTMENT_IVS.
+
+value configuration
+
+9. opened:
+
+   flexfield --> validation --> values
+
+10. entered the permitted department values for SAIF_DEPARTMENT_IVS.
+
+11. entered the job values for SAIF_JOB_DVS and associated each value with its corresponding department.
+
+12. entered the location values for SAIF_LOCATION_DVS and associated each value with its corresponding department.
+
+13. saved all independent and dependent values.
+
+outcome
+
+SAIF_DEPARTMENT_IVS was created as the controlling independent value set.
+
+SAIF_JOB_DVS and SAIF_LOCATION_DVS were created as dependent value sets whose available values are controlled by the selected department.
