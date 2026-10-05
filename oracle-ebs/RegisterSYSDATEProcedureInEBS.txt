@@ -1,0 +1,54 @@
+register the sysdate procedure in oracle ebs
+
+objects used
+
+database procedure: SAIF_PR_SYSDT
+concurrent program: SAIF_CP_SYSDT
+execution method: pl/sql stored procedure
+
+procedure purpose
+
+the procedure retrieves the current oracle database date using SYSDATE and writes it to the concurrent request output through FND_FILE.
+
+registration process
+
+1. created and compiled the SAIF_PR_SYSDT procedure in the oracle database.
+
+2. configured the procedure with the standard ebs concurrent-program parameters:
+
+   ERRBUF
+   RETCODE
+
+3. used SYSDATE to retrieve the current database date.
+
+4. used FND_FILE.PUT_LINE to write the formatted date to the request output.
+
+5. opened the application developer responsibility.
+
+6. registered SAIF_PR_SYSDT under:
+
+   concurrent --> executable
+
+7. selected pl/sql stored procedure as the execution method and entered SAIF_PR_SYSDT as the execution file name.
+
+8. created the concurrent program SAIF_CP_SYSDT and linked it to the registered executable.
+
+9. enabled standard request submission and saved the concurrent program.
+
+10. added the program to the appropriate request group.
+
+verification
+
+the concurrent program was submitted through the requests window.
+
+request id: 7571277
+program: SAIF_CP_SYSDT
+phase: completed
+status: normal
+
+the generated output displayed:
+
+CURRENT DATE=14-SEP-26
+
+the sysdate procedure was registered and executed successfully in oracle ebs.
+

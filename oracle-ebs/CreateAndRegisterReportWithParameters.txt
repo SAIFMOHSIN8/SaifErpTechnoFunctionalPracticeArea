@@ -1,0 +1,51 @@
+create and register an oracle report with parameters
+
+report information
+
+report: SAIF_PARAMETERS_REPORT
+application: application object library
+execution method: oracle reports
+input parameter: DNO
+
+how it was configured
+
+1. created the report in oracle reports builder.
+
+2. added the DNO user parameter to the report.
+
+3. used the DNO parameter in the report query to filter records by department number.
+
+4. compiled the report and generated:
+
+   SAIF_PARAMETERS_REPORT.rep
+
+5. copied the compiled report file to the ebs reports directory.
+
+6. registered SAIF_PARAMETERS_REPORT as an oracle reports executable in the application developer responsibility.
+
+7. created and enabled the SAIF_PARAMETERS_REPORT concurrent program.
+
+parameter mapping
+
+the following concurrent-program parameter was added:
+
+   sequence: 1
+   parameter: DNO
+   enabled: yes
+   value set: SAIF_VS_DNO
+   prompt: DNO
+   token: DNO
+   display size: 4
+
+the token was configured as DNO so that the value entered during request submission was passed to the matching report parameter.
+
+request test
+
+the report was submitted with department number 30.
+
+request id: 7571483
+phase: completed
+status: normal
+parameter value: 30
+
+the parameterized report was registered successfully and completed normally in oracle ebs.

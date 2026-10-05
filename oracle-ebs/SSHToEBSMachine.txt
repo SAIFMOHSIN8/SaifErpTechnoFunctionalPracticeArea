@@ -1,0 +1,38 @@
+ssh connection to the ebs machine
+
+connection information
+
+host: ebs.example.com
+protocol: ssh
+port: 22
+user: root
+
+connection steps
+
+1. opened a terminal or ssh client.
+
+2. entered the following command:
+
+   ssh root@ebs.example.com
+
+3. accepted the server host key when prompted during the first connection.
+
+4. entered the account password securely.
+
+   the password was not written in the ticket documentation or stored in the repository.
+
+5. waited for the remote shell prompt to appear.
+
+6. verified the connection using:
+
+   whoami
+   hostname
+   pwd
+
+7. confirmed access to the ebs application directories under:
+
+   /u01/install/VISION/fs1/EBSapps/appl
+
+outcome
+
+the ssh connection to the ebs application server was established successfully.
