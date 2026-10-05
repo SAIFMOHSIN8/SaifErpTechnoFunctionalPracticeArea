@@ -1,0 +1,46 @@
+create an .rtf report based on the parameter report
+
+source report
+
+concurrent program: SAIF_PARAMETERS_REPORT
+input parameter: DNO
+value set: SAIF_VS_DNO
+parameter token: DNO
+
+template preparation
+
+1. used SAIF_PARAMETERS_REPORT as the source parameter report.
+
+2. confirmed that the DNO parameter was enabled and connected to the SAIF_VS_DNO value set.
+
+3. generated sample report data to use while designing the template.
+
+4. opened microsoft word with the oracle bi publisher template builder.
+
+5. loaded the sample report data into the template builder.
+
+6. added the required report fields and arranged the output layout.
+
+7. included the department-related data returned by the DNO parameter.
+
+8. previewed the template and checked that the report fields displayed correctly.
+
+9. saved the completed layout as an .rtf file.
+
+ebs template setup
+
+10. opened the xml publisher administrator responsibility.
+
+11. created or selected the data definition associated with SAIF_PARAMETERS_REPORT.
+
+12. created a template record and linked it to the report data definition.
+
+13. selected RTF as the template type.
+
+14. uploaded the completed .rtf file and saved the template.
+
+result
+
+an .rtf layout was created from the parameter report and linked to its xml publisher data definition.
+
+the concurrent-program screenshots confirm the source report and DNO parameter configuration.

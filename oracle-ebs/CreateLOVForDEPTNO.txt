@@ -1,0 +1,42 @@
+create a list of values for DEPTNO
+
+form used
+
+form function: SAIF_EMP_LOV
+target field: EMP.DEPTNO
+lov title: DEPNO LOV
+
+configuration
+
+1. opened the employee form module in oracle forms builder.
+
+2. created a record group that retrieves valid DEPTNO values from the department table.
+
+3. created a new list of values and connected it to the department record group.
+
+4. configured the lov to display the department-number column.
+
+5. selected the EMP.DEPTNO item in the object navigator.
+
+6. assigned the newly created lov to the DEPTNO item.
+
+7. enabled list validation so that the field accepts a value selected from the available department numbers.
+
+8. saved and compiled the form module.
+
+runtime verification
+
+9. launched SAIF_EMP_LOV through the SAIF_RESP_OMAN responsibility.
+
+10. placed the cursor in the Deptno field.
+
+11. opened the list of values using the lov button.
+
+12. confirmed that the DEPNO LOV window displayed selectable department numbers, including:
+
+    10
+    30
+
+result
+
+the DEPTNO list of values opened successfully and returned valid department-number choices in the running ebs form.
