@@ -1,0 +1,53 @@
+create master block DEPT and detail block EMP
+
+build summary
+
+1. opened oracle forms builder and created a new form module.
+
+2. used the data block wizard to create the DEPT block from the DEPT database table.
+
+   items included:
+   - DEPTNO
+   - DNAME
+   - LOC
+
+3. configured DEPT as the master block.
+
+4. used the data block wizard again to create the EMP block from the EMP database table.
+
+   items included:
+   - EMPNO
+   - ENAME
+   - JOB
+   - MGR
+   - HIREDATE
+   - SAL
+   - COMM
+   - DEPTNO
+
+5. configured EMP as the detail block.
+
+6. created a relation named DEPT_EMP under the DEPT master block.
+
+relation setup
+
+   master block: DEPT
+   detail block: EMP
+   relation type: join
+   join condition: EMP.DEPTNO = DEPT.DEPTNO
+   delete record behavior: non-isolated
+   deferred coordination: no
+
+7. created the canvas DEPT_EMP_CANVAS and placed both block layouts on it.
+
+8. verified that the object navigator contained:
+
+   DEPT master block
+   EMP detail block
+   DEPT_EMP relation
+   DEPT_EMP_CANVAS
+   separate layout frames for both blocks
+
+9. saved the module as SAIF_MasterDetailForm.fmb.
+
+result: the DEPT and EMP blocks were created with a master-detail relationship based on DEPTNO.git
