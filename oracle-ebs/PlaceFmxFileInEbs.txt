@@ -1,0 +1,31 @@
+place an .fmx file in oracle ebs
+
+file deployed
+
+SAIF_MasterDetailForm.fmx
+
+deployment steps
+
+1. opened the completed form module in oracle forms builder.
+
+2. compiled the form and generated the .fmx runtime file.
+
+3. connected to the ebs application server using winscp.
+
+4. navigated to the following server directory:
+
+   /u01/install/VISION/fs1/EBSapps/appl/fnd/12.0.0/forms/US
+
+5. transferred SAIF_MasterDetailForm.fmx into the forms/US directory.
+
+6. confirmed that the full filename was visible on the server.
+
+deployment check
+
+- filename: SAIF_MasterDetailForm.fmx
+- file size: 27,416 bytes
+- server folder: forms/US
+- permissions: rw-r--r--
+- owner: root
+
+the compiled form file was successfully placed in the ebs application server directory.

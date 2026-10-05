@@ -1,0 +1,62 @@
+create a report and register it in oracle ebs
+
+report used
+
+report name: SAIF_PARAMETERS_REPORT
+report type: oracle reports
+application: application object library
+
+report preparation
+
+1. created the report in oracle reports builder.
+
+2. compiled the report and generated the runtime report file:
+
+   SAIF_PARAMETERS_REPORT.rep
+
+3. transferred the compiled report to the following ebs server directory:
+
+   /u01/install/VISION/fs1/EBSapps/appl/fnd/12.0.0/reports/US
+
+executable registration
+
+4. navigated to:
+
+   application developer --> concurrent --> executable
+
+5. registered the report executable with these values:
+
+   executable: SAIF_PARAMETERS_REPORT
+   short name: SAIF_PARAMETERS_REPORT
+   application: application object library
+   execution method: oracle reports
+   execution file name: SAIF_PARAMETERS_REPORT
+
+concurrent program setup
+
+6. navigated to:
+
+   application developer --> concurrent --> program
+
+7. created and enabled the concurrent program:
+
+   program: SAIF_PARAMETERS_REPORT
+   short name: SAIF_PARAMETERS_REPORT
+   executable: SAIF_PARAMETERS_REPORT
+   method: oracle reports
+   output format: html
+   style: A4
+   use in SRS: enabled
+
+8. added the concurrent program to the request group used by the SAIF responsibility.
+
+test result
+
+the report was submitted through standard request submission.
+
+request id: 7571483
+phase: completed
+status: normal
+requester: SAIF
+
+the oracle report was created, registered, and executed successfully in ebs.

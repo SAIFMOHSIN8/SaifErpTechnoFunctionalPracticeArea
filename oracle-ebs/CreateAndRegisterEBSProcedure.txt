@@ -1,0 +1,54 @@
+create an oracle ebs procedure and register it in ebs
+
+procedure details
+
+name: SAIF_PR_EBS
+type: pl/sql stored procedure
+application: application object library
+
+work completed
+
+1. connected to the oracle database through sql*plus.
+
+2. created the SAIF_PR_EBS procedure with the standard concurrent-program output parameters:
+
+   ERRBUF
+   RETCODE
+
+3. used FND_FILE.PUT_LINE to write the following message to the concurrent request output:
+
+   WELCOME TO ORACLE EBS PROCEDURE
+
+4. compiled the procedure and confirmed that it was created without compilation errors.
+
+5. opened the application developer responsibility.
+
+6. navigated to:
+
+   concurrent --> executable
+
+7. registered the executable using these details:
+
+   executable: SAIF_PR_EBS
+   short name: SAIF_PR_EBS
+   application: application object library
+   execution method: pl/sql stored procedure
+   execution file name: SAIF_PR_EBS
+
+8. navigated to:
+
+   concurrent --> program
+
+9. created the concurrent program and linked it to the registered executable.
+
+   program: SAIF_PR_EBS
+   short name: SAIF_PR_EBS
+   executable: SAIF_PR_EBS
+   method: pl/sql stored procedure
+   output format: html
+   use in SRS: enabled
+   program status: enabled
+
+final check
+
+the SAIF_PR_EBS database procedure was successfully registered as an enabled oracle ebs concurrent program.
