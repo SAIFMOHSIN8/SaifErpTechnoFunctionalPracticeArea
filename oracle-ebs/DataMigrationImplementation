@@ -1,0 +1,58 @@
+data migration implementation using sql*loader
+
+migration target
+
+database table: SAIF_TEST
+
+columns:
+
+ID
+NAME
+COURSE
+
+implementation summary
+
+1. created the SAIF_TEST target table in the oracle database.
+
+2. prepared a source data file containing the records to be migrated.
+
+3. created the sql*loader control file:
+
+   SAIF_CONTROL.ctl
+
+4. mapped the source fields to the target columns:
+
+   ID
+   NAME
+   COURSE
+
+5. transferred the source and control files to the ebs application server.
+
+6. stored the control file under:
+
+   /u01/install/VISION/fs1/EBSapps/appl/fnd/12.0.0/reports/US/SAIF_CONTROL.ctl
+
+7. connected to the ebs server and ran sql*loader using a secure database login.
+
+   sqlldr userid=<username>@ebsdb control=/u01/install/VISION/fs1/EBSapps/appl/fnd/12.0.0/reports/US/SAIF_CONTROL.ctl
+
+8. reviewed the sql*loader result and checked for rejected or bad records.
+
+database verification
+
+9. connected to the oracle database through sql*plus.
+
+10. queried the target table:
+
+    SELECT *
+    FROM SAIF_TEST;
+
+11. confirmed that seven records were returned from the migrated table.
+
+result
+
+the source data was loaded into SAIF_TEST and verified through sql*plus.
+
+security note
+
+database passwords must not be included in repository files, screenshots, or command examples. Text fields should also be checked for unwanted quotation marks before the migration is considered fully clean.
