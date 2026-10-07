@@ -1,0 +1,35 @@
+task: apply conditional formatting to the master-detail table
+
+purpose
+highlight salary values in the master-detail report so that higher salaries are easier to identify.
+
+report fields
+- empno
+- ename
+- job
+- sal
+- dname
+
+implementation
+1. opened the master-detail RTF template in Microsoft Word.
+2. selected the salary field inside the employee detail table.
+3. added a conditional rule to evaluate each SAL value.
+4. configured salary values greater than 1000 to appear in red.
+5. retained the normal text color when the condition was not satisfied.
+6. saved the updated RTF template.
+7. previewed the template using the master-detail XML data.
+8. verified the final report output.
+
+conditional logic
+if SAL is greater than 1000:
+    display the salary in red
+otherwise:
+    use the normal formatting
+
+verification
+the preview shows qualifying salaries such as 1300, 1500, 2000, 2450, 2975, 3000, 5000, 6000, 9000, and 10000 in red.
+
+the salary value 800 remains in the normal text color because it does not meet the condition.
+
+result
+conditional formatting was successfully applied to the salary column of the master-detail table.

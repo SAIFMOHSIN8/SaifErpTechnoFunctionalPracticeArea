@@ -1,0 +1,34 @@
+ticket: create a bar graph, pie chart, and table
+
+objective:
+create visual and tabular report outputs based on employee, salary, job, manager, and department data.
+
+work completed:
+
+1. pie chart
+- created a pie chart showing the salary percentage for managers.
+- manager identifiers are displayed in the legend.
+- each slice represents the manager's percentage of the salary total.
+- percentage labels were added to the chart.
+
+2. bar graph
+- created a bar graph showing salary averages by job title.
+- job titles are displayed along the category axis.
+- salary values are represented by the height of each bar.
+- the chart title was set to "salary average per job title."
+
+3. tabular report
+- created a table containing employee and department information.
+- included the following columns:
+  - empno
+  - ename
+  - job
+  - sal
+  - dname
+- employee records are displayed with their corresponding department names.
+
+note:
+the ticket retained the old term "pivot table," but the updated requirement was to produce a standard tabular report. The implemented output follows the revised requirement.
+
+result:
+the pie chart, bar graph, and employee-department table were created successfully.
