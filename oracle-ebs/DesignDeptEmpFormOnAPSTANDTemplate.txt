@@ -1,0 +1,25 @@
+task
+design the DEPT and EMP master-detail form using the APSTAND template.
+
+template components used
+- standard EBS object groups
+- EBS property classes
+- standard application parameters
+- WHEN-NEW-FORM-INSTANCE trigger
+- standard supporting canvases and program units
+
+design work
+- created the form from APSTAND.fmb.
+- retained the required Oracle EBS standard objects.
+- designed the main content on SAIF_DEPT_EMP_CANVAS.
+- placed the DEPT master block in the Department Details frame.
+- placed the EMP multi-record block below the department section.
+- aligned the item prompts and fields for a consistent layout.
+- configured the EMP section to display multiple employee records.
+- saved the completed module as SAIF_DEPT_EMP_MD.fmb.
+
+evidence
+the Object Navigator contains the DEPT and EMP blocks together with the standard APSTAND objects, parameters, property classes, canvases, and initialization trigger.
+
+outcome
+the master-detail form follows the Oracle EBS form-template structure and visual layout.

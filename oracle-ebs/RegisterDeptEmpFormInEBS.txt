@@ -1,0 +1,42 @@
+objective: register the DEPT and EMP master-detail form in Oracle EBS
+
+form source
+SAIF_DEPT_EMP_MD.fmb
+
+registration process
+
+1. compile the form
+- compile SAIF_DEPT_EMP_MD.fmb using the Oracle Forms compiler.
+- confirm that the module compiles without errors.
+- generate SAIF_DEPT_EMP_MD.fmx.
+
+2. deploy the executable
+- transfer the generated FMX file to the appropriate Oracle EBS forms/US directory.
+- verify the file name, permissions, owner, and deployment location.
+
+3. register the form
+- open the Application Developer responsibility.
+- navigate to Application > Form.
+- create a form registration using the executable name without the file extension.
+- provide an appropriate user form name and application.
+- save the record.
+
+4. define a function
+- navigate to Application > Function.
+- create a function for the registered form.
+- select the Form function type.
+- associate the function with the registered DEPT and EMP form.
+- save the function definition.
+
+5. provide responsibility access
+- add the function to the required menu.
+- confirm that the menu is assigned to the intended responsibility.
+- clear the application cache or sign in again if the new function is not immediately visible.
+
+6. test
+- open the function through the assigned Oracle EBS responsibility.
+- verify that the form launches successfully.
+- query a department and confirm that the corresponding employee records appear.
+
+verification status
+the available screenshot confirms the form module and its APSTAND-based design. A registration screen or successful launch from an EBS responsibility is still required to verify that registration and deployment were completed.

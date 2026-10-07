@@ -1,0 +1,28 @@
+ticket: create a master-detail form using DEPT and EMP
+
+form module
+SAIF_DEPT_EMP_MD.fmb
+
+master block: DEPT
+- DEPTNO
+- DNAME
+- LOC
+
+detail block: EMP
+- EMPNO
+- ENAME
+- JOB
+- SAL
+- DEPTNO
+
+implementation summary
+1. created the DEPT database block as the master block.
+2. created the EMP database block as the detail block.
+3. linked the two blocks through the DEPTNO column.
+4. displayed one department record in the master section.
+5. displayed multiple related employee records in the detail section.
+6. arranged both blocks on SAIF_DEPT_EMP_CANVAS.
+7. saved the form as SAIF_DEPT_EMP_MD.fmb.
+
+result
+the DEPT and EMP blocks were created and presented in a master-detail layout.
