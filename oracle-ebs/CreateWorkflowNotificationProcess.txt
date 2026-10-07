@@ -1,0 +1,48 @@
+ticket: create an Oracle Workflow process to display a notification
+
+workflow definition
+- workflow type: X_SAIF_WF
+- internal name: X_SAIFWF
+- process: X_SAIF_PROCESS
+- notification activity: XX_SAIF_NOTIFY
+- message: XX_SAIF_MSG
+- performer: SAIF
+
+message setup
+subject:
+XX_SAIF_MSG
+
+body:
+Lets make some Coffee
+
+workflow design
+the process was designed with the following activity flow:
+
+Start -> XX_SAIF_NOTIFY -> End
+
+configuration steps
+1. created the X_SAIF_WF workflow item type in Oracle Workflow Builder.
+2. created the XX_SAIF_MSG message and entered the notification subject and body.
+3. created the XX_SAIF_NOTIFY notification activity.
+4. associated the notification activity with the XX_SAIF_MSG message.
+5. configured the performer as the constant role SAIF.
+6. created the runnable X_SAIF_PROCESS process.
+7. connected the Start activity to XX_SAIF_NOTIFY.
+8. connected XX_SAIF_NOTIFY to the End activity.
+9. saved and uploaded the workflow definition to Oracle EBS.
+10. opened Workflow Administrator Web Applications.
+11. located X_SAIF_WF through Developer Studio.
+12. ran X_SAIF_PROCESS using item key 1.
+13. reviewed the execution through Workflow Status Monitor.
+14. opened the generated notification from the recipient's worklist.
+
+test evidence
+- workflow item key: 1
+- workflow status: Complete
+- notification ID: 8085335
+- recipient: Stock, Pat
+- displayed message: Lets make some Coffee
+- response required: no
+
+result
+X_SAIF_PROCESS completed successfully and generated the XX_SAIF_MSG notification in the assigned recipient's Oracle EBS worklist.
