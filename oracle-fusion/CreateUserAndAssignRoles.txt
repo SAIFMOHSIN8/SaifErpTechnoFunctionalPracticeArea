@@ -1,0 +1,46 @@
+ticket: create a user in Oracle Fusion and assign roles
+
+purpose
+create an active Oracle Fusion user account and provide the roles required for the user’s work.
+
+user details
+- user category: DEFAULT
+- username: SAIFMOHSIN
+- first name: Saif
+- last name: Al Mahrouqi
+- account status: Active
+- account locked: No
+
+procedure
+
+1. open the Security Console.
+2. select Users from the navigation menu.
+3. choose the option to add a new user account.
+4. enter the username and personal information.
+5. keep the account active and confirm that it is not locked.
+6. save the user account.
+7. open the Roles section for the new user.
+8. search for and add the required roles.
+9. save the role assignments.
+10. reopen the user and verify the account and roles.
+
+assigned roles
+
+Employee
+- role code: ORA_PER_EMPLOYEE_ABSTRACT
+- assignable: Yes
+- auto-provisioned: No
+
+IT Security Manager
+- role code: ORA_FND_IT_SECURITY_MANAGER_JOB
+- assignable: Yes
+- auto-provisioned: No
+
+verification
+the User Account Details page shows user SAIFMOHSIN as active and displays both assigned roles.
+
+security note
+IT Security Manager is a powerful administrative role. It should only be assigned when the user is authorized to manage security. In a production environment, follow least-privilege and approval requirements.
+
+result
+the Oracle Fusion user account was created successfully and the Employee and IT Security Manager roles were assigned.
