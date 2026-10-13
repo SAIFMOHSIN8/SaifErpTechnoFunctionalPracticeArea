@@ -1,0 +1,153 @@
+ticket: P2P cycle implementation
+
+objective
+complete the Oracle EBS Procure-to-Pay cycle from creating a purchase request through paying the supplier and transferring the accounting entries to General Ledger.
+
+transaction details
+- item: XX_MACBOOK_SAIF
+- requisition: 16113
+- purchase order: 6762
+- receipt: 9141
+- invoice: SAIF-INV-6762
+- invoice amount: USD 900
+- transfer to GL request: 7579655
+- journal import request: 7579656
+
+process flow
+item -> requisition -> purchase order -> receipt -> invoice -> payment -> accounting -> general ledger
+
+1. verify the item
+responsibility:
+Inventory Vision Operations (USA)
+
+navigation:
+Items -> Master Items
+
+- queried item XX_MACBOOK_SAIF.
+- confirmed that it was assigned to the required organization.
+- verified that it was purchasable and transactable.
+
+2. create and approve the requisition
+responsibility:
+Purchasing Vision Operations (USA)
+
+navigation:
+Requisitions -> Requisitions
+
+- entered item XX_MACBOOK_SAIF.
+- entered the quantity, destination, organization, and charge account.
+- saved requisition 16113.
+- submitted it for approval.
+- confirmed that its status was Approved.
+
+3. create and approve the purchase order
+- converted the approved requisition into a standard purchase order.
+- confirmed the supplier, item, quantity, price, shipment, and distribution.
+- saved purchase order 6762.
+- submitted it for approval.
+- verified that the PO status was Approved.
+
+4. receive the item
+navigation:
+Receiving -> Receipts
+
+- searched using PO 6762.
+- selected the outstanding shipment.
+- entered the received quantity and receiving details.
+- saved the transaction.
+- Oracle generated receipt 9141.
+- confirmed that the goods reached their final destination.
+
+5. create and match the AP invoice
+responsibility:
+Payables Vision Operations (USA)
+
+navigation:
+Invoices -> Entry -> Invoices
+
+- entered invoice SAIF-INV-6762.
+- entered an invoice amount of USD 900.
+- matched the invoice to PO 6762 and receipt 9141.
+- confirmed that the invoice distributions totaled USD 900.
+- saved the invoice.
+
+three-way match
+- ordered: PO 6762
+- received: receipt 9141
+- invoiced: SAIF-INV-6762
+
+6. validate and account the invoice
+from the invoice:
+Actions -> Validate
+
+- validated the invoice.
+- confirmed that there were no unresolved holds.
+
+from the invoice:
+Actions -> Create Accounting
+
+- selected Final accounting.
+- confirmed that the invoice accounting status was Accounted.
+
+7. pay the supplier
+working navigation:
+Invoice -> Scheduled Payments -> Pay...
+
+- confirmed that the amount remaining was USD 900.
+- confirmed that the payment method was CHECK.
+- verified that no payment hold existed.
+- created a Quick Payment.
+- selected bank account BofA-204.
+- selected Global_payment process profile.
+- completed the USD 900 payment.
+
+8. account the payment
+from the completed payment:
+Actions -> Create Accounting
+
+- selected Final accounting.
+- submitted the accounting process.
+- confirmed that the payment accounting status was Processed.
+
+9. transfer the entries to General Ledger
+navigation:
+View -> Requests -> Submit a New Request
+
+- submitted Transfer Journal Entries to GL.
+- request 7579655 completed normally.
+- the process launched Journal Import request 7579656.
+- Journal Import also completed with a Normal status.
+
+10. verify the GL journal
+responsibility:
+General Ledger Vision Operations (USA)
+
+navigation:
+Journals -> Enter
+
+- searched for journals with the Payables source.
+- located the imported Purchase Invoices and Payments journals.
+- reviewed the journal lines and account combinations.
+- confirmed that total debits equaled total credits.
+
+the reviewed payment journal showed:
+- debit: USD 3,900
+- credit: USD 3,900
+- result: Balanced
+
+the journal total was greater than the individual USD 900 payment because Oracle summarized multiple Payables transactions in the imported GL journal.
+
+important checks
+- the requisition and PO must be approved.
+- the PO must have an outstanding quantity before receiving.
+- transaction and GL dates must fall within open accounting periods.
+- invoice quantity and price must agree with the PO and receipt.
+- invoice holds must be investigated and corrected.
+- invoice and payment accounting must be Final.
+- both the transfer and Journal Import requests must complete normally.
+
+result
+the full P2P cycle was completed successfully. The item was requested, ordered, received, invoiced, paid, accounted, transferred to General Ledger, and verified in a balanced GL journal.
+
+scope note
+opening stock, RFQ, quotation, and detailed SLA SQL tracing were optional exercises and were not required for the completed P2P cycle.
